@@ -37,5 +37,37 @@
     }
 
 
+function generateFormList($arr)
+{
+ $num=0;
+foreach ($arr as $row) {
+ 
+ $fID=$row['formID'];
+ $fName=$row['formName'];
+ $accoTarget="collapse".$num;
+ $accoHId="heading".$num;
+ $textAreaName="fText".$fID;
+ $fText=$row['formText'];
+ echo<<<EOT
+ <div class="card">
+    <div class="card-header" id="$accoHId">
+      <h5 class="mb-0">
+        <input type="radio" id="radioId$num" name="formRadio" value="$fID"   data-toggle="collapse" data-target="#$accoTarget" aria-expanded="false" aria-controls="$accoTarget">
+          $fName
+          </h5>
+    </div>
+
+    <div id="$accoTarget" class="collapse" aria-labelledby="$accoHId" data-parent="#accordionPId">
+      <div class="card-body">
+        <textarea name="$textAreaName" rows="5" cols="50">
+        $fText;
+        </textarea>
+      </div>
+    </div>
+</div> 
+EOT;
+$num+=1;
+}
+}
 
 ?>
