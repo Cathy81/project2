@@ -36,7 +36,11 @@
   return $optionStr;
     }
 
-
+// 
+// to use the following function:
+// $emailQuery="SELECT formID, formName, formText FROM tblapplicantforms";
+//$arr= getResultFromTable($conn, $emailQuery);
+//generateFormList($arr)
 function generateFormList($arr)
 {
  $num=0;
