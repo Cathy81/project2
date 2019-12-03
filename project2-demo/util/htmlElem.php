@@ -43,9 +43,9 @@
 //generateFormList($arr)
 function generateFormList($arr)
 {
+echo "<div class=\"accordionPId\">";
  $num=0;
 foreach ($arr as $row) {
- 
  $fID=$row['formID'];
  $fName=$row['formName'];
  $accoTarget="collapse".$num;
@@ -72,6 +72,8 @@ foreach ($arr as $row) {
 EOT;
 $num+=1;
 }
+
+echo "</div>";
 }
 
 ?>
